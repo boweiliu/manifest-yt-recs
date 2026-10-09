@@ -25,9 +25,17 @@ The name comes from "manifestation": embody your interests in front of your circ
 
 ## In this repo
 
-- [`landing/`](landing/): the marketing landing page ("Handpicked.").
-- [`docs/mocks/`](docs/mocks/): mock screens for the demo loop, as slides and
-  as one storyboard page, plus the written-out interactions.
+The `docs/` folder is also the project's website (GitHub Pages, served from
+`main` /docs, no build step):
+
+| Page | Live | Source |
+| --- | --- | --- |
+| Landing page ("Handpicked.") | https://boweiliu.github.io/manifest-yt-recs/ | [`docs/index.html`](docs/index.html) |
+| Mock screens, one page | https://boweiliu.github.io/manifest-yt-recs/storyboard/ | [`docs/storyboard/index.html`](docs/storyboard/index.html) |
+| Mock screens, as slides | https://boweiliu.github.io/manifest-yt-recs/slides/ | [`docs/slides/index.html`](docs/slides/index.html) |
+
+- [`docs/mocks/interactions.md`](docs/mocks/interactions.md): every interaction
+  in the demo loop, written out.
 - [`docs/api.md`](docs/api.md), [`docs/data-format.md`](docs/data-format.md):
   the server contract.
 

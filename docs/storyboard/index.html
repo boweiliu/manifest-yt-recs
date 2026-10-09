@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Friends, Not the Algorithm: mock screens</title>
+<title>Friends, Not the Algorithm: core-loop mocks</title>
 <style>
   :root {
     --yt-bg: #0f0f0f;
@@ -321,65 +321,9 @@
 
   .callout { position: absolute; background: #fff6df; color: #4a3a10; border: 1px solid #e6c46d; border-radius: 8px; padding: 6px 9px; font-size: 12px; font-weight: 600; box-shadow: 0 6px 16px rgba(0,0,0,0.35); max-width: 220px; line-height: 1.3; }
   .callout .n { display: inline-grid; place-items: center; width: 17px; height: 17px; border-radius: 50%; background: #8a7a52; color: #fff; font-size: 10.5px; margin-right: 5px; vertical-align: 1px; }
-
-  /* ---------- pitch slides ---------- */
-  .pitch { background: #fbf9f4; border: 1px solid #ddd6c8; border-radius: 18px; padding: 56px 64px; min-height: 640px; }
-  .kicker { font-size: 14px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #8a7a52; margin-bottom: 18px; }
-  .pitch h2 { font-size: 46px; line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 18px; max-width: 980px; }
-  .pitch .big { font-size: 22px; line-height: 1.45; color: #3a3a3a; max-width: 900px; margin: 0 0 28px; }
-  .pitch .by { font-size: 15px; color: #6b6b6b; }
-  .title-slide { display: flex; flex-direction: column; justify-content: center; background:
-      radial-gradient(ellipse at 88% 18%, rgba(245,184,61,0.28), transparent 45%), #fbf9f4; }
-  .title-slide h2 { font-size: 64px; }
-  .title-slide .tmark { width: 64px; height: 64px; border-radius: 18px; background: var(--ext); display: grid; place-items: center; margin-bottom: 26px; }
-  .title-slide .tmark svg { width: 38px; height: 38px; }
-  .keyhint { margin-top: 40px; font-size: 13px; color: #8b8b8b; }
-  .keyhint kbd { color: #555; border-color: #c9c2b2; }
-  .cards3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 8px; }
-  .pcard { background: #fff; border: 1px solid #e3ddd0; border-radius: 14px; padding: 22px 22px 24px; font-size: 17px; line-height: 1.45; color: #333; }
-  .pcard .h { font-size: 20px; font-weight: 800; color: #1d1d1d; margin-bottom: 8px; line-height: 1.25; }
-  .pcard .n { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--ext); color: var(--ext-ink); font-weight: 800; margin-bottom: 12px; }
-  .flow4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; margin: 10px 0 34px; }
-  .flow4 .pcard { position: relative; }
-  .flow4 .pcard:not(:last-child)::after { content: ""; position: absolute; right: -20px; top: 50%; border-left: 12px solid #c9b27a; border-top: 8px solid transparent; border-bottom: 8px solid transparent; }
-  .quote { border-left: 4px solid var(--ext); padding: 6px 0 6px 18px; font-size: 19px; color: #444; max-width: 900px; font-style: italic; }
-  .quote small { display: block; font-style: normal; font-size: 13px; color: #8a7a52; margin-top: 6px; font-weight: 700; }
-  .limit { margin-top: 24px; font-size: 17px; color: #555; max-width: 980px; }
-  .limit b { color: #1d1d1d; }
-  .two { display: grid; grid-template-columns: 1.2fr 1fr; gap: 26px; }
-  .steps { margin: 0; padding: 0; list-style: none; counter-reset: st; }
-  .steps li { counter-increment: st; display: flex; gap: 14px; align-items: flex-start; font-size: 19px; line-height: 1.4; padding: 12px 0; border-bottom: 1px solid #ebe5d8; }
-  .steps li::before { content: counter(st); flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--ext); color: var(--ext-ink); font-weight: 800; display: grid; place-items: center; font-size: 15px; }
-  .steps li a { color: #8a6a10; font-size: 14px; font-weight: 700; margin-left: 6px; text-decoration: none; }
-  .side h4 { margin: 4px 0 10px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #8a7a52; }
-  .side ul { margin: 0 0 22px; padding-left: 20px; font-size: 16.5px; line-height: 1.55; color: #333; }
-  .overview h2 { font-size: 38px; }
-
-  /* ---------- deck mode ---------- */
-  body.deck { overflow: hidden; height: 100vh; }
-  body.deck .doc { width: auto; padding: 0; }
-  body.deck .slide { display: none; }
-  body.deck .slide.active { display: block; position: fixed; left: 50%; top: calc((100vh - 54px) / 2); width: 1240px; margin: 0;
-      transform-origin: center center; transform: translate(-50%, -50%) scale(var(--fit, 1)); }
-  body.deck .pitch.slide.active { display: flex; }
-  body.deck .pitch:not(.title-slide).slide.active { display: block; }
-  body:not(.deck) .slide { margin-bottom: 56px; }
-  body:not(.deck) .doc { padding-bottom: 110px; }
-  .navbar { position: fixed; left: 0; right: 0; bottom: 0; height: 54px; background: rgba(251, 249, 244, 0.96); border-top: 1px solid #d6d1c6;
-      display: flex; align-items: center; gap: 12px; padding: 0 16px; z-index: 50; backdrop-filter: blur(6px); }
-  .navbar button, .navbar a { font-weight: 700; font-size: 13px; font-family: inherit; line-height: 1; border: 1px solid #d6d1c6; background: #fff; color: #333; border-radius: 18px; padding: 9px 14px; cursor: pointer; text-decoration: none; }
-  .navbar button:hover, .navbar a:hover { border-color: #b9a46c; }
-  .navbar button:disabled { opacity: 0.4; cursor: default; }
-  .navbar .count { font-weight: 800; font-size: 13px; color: #8a7a52; min-width: 54px; text-align: center; }
-  .navbar .stitle { font-weight: 700; font-size: 14px; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .navbar .grow { flex: 1; }
-  .navbar .dots { display: flex; gap: 5px; }
-  .navbar .dots i { width: 7px; height: 7px; border-radius: 50%; background: #d6d1c6; cursor: pointer; display: block; }
-  .navbar .dots i.on { background: #8a7a52; transform: scale(1.3); }
-  body:not(.deck) .navbar .deckonly { display: none; }
 </style>
 </head>
-<body class="deck">
+<body>
 <svg width="0" height="0" style="position:absolute">
   <defs>
     <symbol id="face" viewBox="0 0 100 90">
@@ -424,41 +368,8 @@
 </svg>
 
 <div class="doc">
-  <section class="slide pitch title-slide" id="title" data-title="Friends, Not the Algorithm">
-    <div class="tmark"><svg viewBox="0 0 16 16"><use href="#logo"/></svg></div>
-    <div class="kicker">Dismantle Network Effects &middot; build night, 2026-10-08</div>
-    <h2>Friends, Not the Algorithm</h2>
-    <p class="big">Replace my YouTube recommendation feed with my circle: the people who know me, and the creators I watch.</p>
-    <div class="by">Bowei &middot; working title &middot; core-loop mock screens</div>
-    <div class="keyhint"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> to move &nbsp; <kbd>A</kbd> all screens on one page &nbsp; <kbd>F</kbd> full screen</div>
-  </section>
-
-  <section class="slide pitch" id="problem" data-title="The problem">
-    <div class="kicker">The problem</div>
-    <h2>YouTube decides what I watch next.</h2>
-    <p class="big">And it decides on what keeps me watching, not on who I am.</p>
-    <div class="cards3">
-      <div class="pcard"><div class="n">1</div><div class="h">The feed picks for watch time</div>Not for me. My history tunes it, and leaving means starting cold.</div>
-      <div class="pcard"><div class="n">2</div><div class="h">My people would pick better</div>My wife and coworkers know me. But they don't know exactly what I'm into, and there's no good way to say "you'd love this, here's why".</div>
-      <div class="pcard"><div class="n">3</div><div class="h">Creators never hear from me</div>The niche channels I watch (around 10k subscribers) get a view count and maybe a public comment. They make things for me and never know me.</div>
-    </div>
-  </section>
-
-  <section class="slide pitch" id="idea" data-title="The idea">
-    <div class="kicker">The idea</div>
-    <h2>Show what I'm into by reacting. Let my circle pick for me.</h2>
-    <div class="flow4">
-      <div class="pcard"><div class="n">1</div><div class="h">I react</div>Video, voice, or text, pinned to the exact moment that grabbed me.</div>
-      <div class="pcard"><div class="n">2</div><div class="h">My circle sees it</div>Inside their own YouTube, through a browser extension. Nothing is public.</div>
-      <div class="pcard"><div class="n">3</div><div class="h">They send picks</div>From their own feeds, each with their reaction and why I'd like it.</div>
-      <div class="pcard"><div class="n">4</div><div class="h">Picks are my feed</div>I react to their picks, they learn me better, the next picks get better.</div>
-    </div>
-    <div class="quote">"Manifestation": show your dreams to your circle, and they help you reach them.<small>The coworker's post this borrows from</small></div>
-  </section>
-
-  <section class="slide pitch overview" id="overview" data-title="The demo, screen by screen">
-  <div class="kicker">The demo, screen by screen</div><h2>Nine screens, one loop.</h2>
-  <p class="lede">The demo loop, one screen per interaction. Bowei reacts and sends; his wife watches his reactions inside her YouTube and sends a pick back; it lands in Bowei's YouTube. Sign-in and invites are left out: everyone in these mocks already has the extension. Every interaction is written out in the interaction notes (link at the bottom right).</p>
+  <h1>Friends, Not the Algorithm: core-loop mocks</h1>
+  <p class="lede">The demo loop, one screen per interaction. Bowei reacts and sends; his wife watches his reactions inside her YouTube and sends a pick back; it lands in Bowei's YouTube. Sign-in and invites are left out: everyone in these mocks already has the extension. Interaction notes: <a href="https://github.com/boweiliu/manifest-yt-recs/blob/main/docs/mocks/interactions.md">interactions.md</a>. Slideshow version: <a href="../slides/">slides</a>. Landing page: <a href="../">Handpicked</a>.</p>
   <div class="legend">
     <span><span class="sw" style="background:#f5b83d"></span>Added by the extension</span>
     <span><span class="sw" style="background:#0f0f0f"></span>YouTube as it is today</span>
@@ -478,10 +389,8 @@
     <a href="#f8"><div class="n">8</div><div class="t">Creator's link</div><div class="who">Creator, Bowei's app (stretch)</div></a>
   </div>
 
-  </section>
-
   <!-- ============ 1. RECORD ============ -->
-  <section class="frame slide" id="f1">
+  <section class="frame" id="f1">
     <div class="frame-head"><span class="frame-num">1</span><span class="frame-title">Record a reaction</span><span class="frame-who">Bowei, on a YouTube watch page</span></div>
     <div class="win">
       <div class="chrome"><div class="dots"><i></i><i></i><i></i></div><div class="url">youtube.com/watch?v=pS7xR2planes</div><div class="ext-icon"><svg><use href="#logo"/></svg></div></div>
@@ -525,7 +434,7 @@
   </section>
 
   <!-- ============ 2. REVIEW ============ -->
-  <section class="frame slide" id="f2">
+  <section class="frame" id="f2">
     <div class="frame-head"><span class="frame-num">2</span><span class="frame-title">Review the take</span><span class="frame-who">Bowei, same page, right after stopping</span></div>
     <div class="win">
       <div class="chrome"><div class="dots"><i></i><i></i><i></i></div><div class="url">youtube.com/watch?v=pS7xR2planes</div><div class="ext-icon"><svg><use href="#logo"/></svg></div></div>
@@ -570,7 +479,7 @@
   </section>
 
   <!-- ============ 3. SEND ============ -->
-  <section class="frame slide" id="f3">
+  <section class="frame" id="f3">
     <div class="frame-head"><span class="frame-num">3</span><span class="frame-title">Send to the circle</span><span class="frame-who">Bowei taps Send under the video</span></div>
     <div class="win" style="height:760px">
       <div class="chrome"><div class="dots"><i></i><i></i><i></i></div><div class="url">youtube.com/watch?v=pS7xR2planes</div><div class="ext-icon"><svg><use href="#logo"/></svg></div></div>
@@ -618,7 +527,7 @@
   </section>
 
   <!-- ============ 4. NOTICE ============ -->
-  <section class="frame slide" id="f4">
+  <section class="frame" id="f4">
     <div class="frame-head"><span class="frame-num">4</span><span class="frame-title">Notice it</span><span class="frame-who">Wife opens YouTube</span></div>
     <div class="win">
       <div class="chrome"><div class="dots"><i></i><i></i><i></i></div><div class="url">youtube.com</div><div class="ext-icon"><svg><use href="#logo"/></svg><span class="badge">2</span></div></div>
@@ -667,7 +576,7 @@
   </section>
 
   <!-- ============ 5. WATCH (over the video) ============ -->
-  <section class="frame slide" id="f5">
+  <section class="frame" id="f5">
     <div class="frame-head"><span class="frame-num">5</span><span class="frame-title">Watch with reactions</span><span class="frame-who">Wife, at 3:42 of the video Bowei sent</span></div>
     <div class="win">
       <div class="chrome"><div class="dots"><i></i><i></i><i></i></div><div class="url">youtube.com/watch?v=pS7xR2planes</div><div class="ext-icon"><svg><use href="#logo"/></svg><span class="badge">1</span></div></div>
@@ -722,7 +631,7 @@
   </section>
 
   <!-- ============ 5b. OTHER KINDS ============ -->
-  <section class="frame slide" id="f5b">
+  <section class="frame" id="f5b">
     <div class="frame-head"><span class="frame-num">5b</span><span class="frame-title">The other reaction kinds</span><span class="frame-who">Same page: a paused-frame reaction, a voice reaction, a text reaction</span></div>
     <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:18px;align-items:start">
       <div class="win">
@@ -768,7 +677,7 @@
   </section>
 
   <!-- ============ 6. SEND A PICK ============ -->
-  <section class="frame slide" id="f6">
+  <section class="frame" id="f6">
     <div class="frame-head"><span class="frame-num">6</span><span class="frame-title">Send a pick back</span><span class="frame-who">Wife, browsing her own feed later</span></div>
     <div class="win" style="height:700px">
       <div class="chrome"><div class="dots"><i></i><i></i><i></i></div><div class="url">youtube.com</div><div class="ext-icon"><svg><use href="#logo"/></svg></div></div>
@@ -803,7 +712,7 @@
   </section>
 
   <!-- ============ 7. GET PICKS ============ -->
-  <section class="frame slide" id="f7">
+  <section class="frame" id="f7">
     <div class="frame-head"><span class="frame-num">7</span><span class="frame-title">Get picks</span><span class="frame-who">Bowei opens YouTube</span></div>
     <div class="win">
       <div class="chrome"><div class="dots"><i></i><i></i><i></i></div><div class="url">youtube.com</div><div class="ext-icon"><svg><use href="#logo"/></svg><span class="badge">3</span></div></div>
@@ -852,7 +761,7 @@
   </section>
 
   <!-- ============ 8. CREATOR ============ -->
-  <section class="frame slide" id="f8">
+  <section class="frame" id="f8">
     <div class="frame-head"><span class="frame-num">8</span><span class="frame-title">Creator's link</span><span class="frame-who">Stretch: Plane &amp; Simple opens the link from Bowei's email</span></div>
     <div class="win">
       <div class="chrome"><div class="dots"><i></i><i></i><i></i></div><div class="url">reactions.bowei.example/s/k3f9q2</div></div>
@@ -889,117 +798,6 @@
       <div class="note"><b>Also the fallback</b>This page doubles as the way anyone without the extension can watch a send, so it is worth building even if the creator part is cut.</div>
     </div>
   </section>
-
-  <section class="slide pitch" id="locks" data-title="Why this dismantles network effects">
-    <div class="kicker">Why this dismantles network effects</div>
-    <h2>YouTube holds me with three locks. This loosens all three.</h2>
-    <div class="cards3">
-      <div class="pcard"><div class="h">Creators and viewers</div>They stay on YouTube for each other. The videos stay there, but creators and viewers get a direct line YouTube doesn't sit in.</div>
-      <div class="pcard"><div class="h">Recommendations</div>The feed improves with my history, so leaving means starting cold. Picks from people who know me replace it.</div>
-      <div class="pcard"><div class="h">The social layer</div>Today it's a link in a chat or a public comment. Reactions move into something I own, attached to the video itself.</div>
-    </div>
-    <p class="limit"><b>The honest limit:</b> the videos still live on YouTube. What leaves is the part that makes it sticky: what I watch next, who I talk to about it, and my relationship with the people who made it.</p>
-  </section>
-
-  <section class="slide pitch" id="tonight" data-title="Tonight's demo">
-    <div class="kicker">Tonight's demo</div>
-    <h2>The smallest version of the loop.</h2>
-    <div class="two">
-      <ol class="steps">
-        <li><span>I react to a video and send it to my wife.<a href="#f1">screens 1&ndash;3</a></span></li>
-        <li><span>She opens it on YouTube with the extension and sees my reaction appear at the right moment.<a href="#f5">screens 4&ndash;5</a></span></li>
-        <li><span>She sends me a pick from her feed, with her reaction and why I'd like it.<a href="#f6">screen 6</a></span></li>
-        <li><span>It shows up in my feed of picks.<a href="#f7">screen 7</a></span></li>
-      </ol>
-      <div class="side">
-        <h4>Stretch</h4>
-        <ul><li>Send a reaction to a small creator and show what they receive (screen 8).</li><li>Play the same reaction on a local copy of the video.</li></ul>
-        <h4>Left out on purpose</h4>
-        <ul><li>Sign-in, invite links, who can see what. The demo hard-codes the circle.</li><li>Separate circles for family, coworkers, creators.</li></ul>
-      </div>
-    </div>
-  </section>
 </div>
-
-<nav class="navbar" id="navbar">
-  <button id="nav-prev" class="deckonly" title="Previous (left arrow)">&larr; Prev</button>
-  <span class="count deckonly" id="nav-count"></span>
-  <button id="nav-next" class="deckonly" title="Next (right arrow)">Next &rarr;</button>
-  <span class="stitle deckonly" id="nav-title"></span>
-  <span class="grow"></span>
-  <span class="dots deckonly" id="nav-dots"></span>
-  <button id="nav-mode" title="A">All screens</button>
-  <a href="interactions.md" id="nav-notes">Interaction notes</a>
-</nav>
-<script>
-(() => {
-  const slides = [...document.querySelectorAll(".slide")];
-  const body = document.body;
-  const params = new URLSearchParams(location.search);
-  let idx = 0;
-  const titleOf = (el) => el.dataset.title || (el.querySelector(".frame-title") || {}).textContent || "";
-  const dots = document.getElementById("nav-dots");
-  slides.forEach((s, i) => { const d = document.createElement("i"); d.title = titleOf(s); d.onclick = () => go(i); dots.appendChild(d); });
-
-  function fit() {
-    const el = slides[idx];
-    if (!body.classList.contains("deck") || !el) return;
-    el.style.setProperty("--fit", 1);
-    const w = el.offsetWidth, h = el.offsetHeight;
-    const s = Math.min((innerWidth - 32) / w, (innerHeight - 54 - 24) / h, 1.6);
-    el.style.setProperty("--fit", s.toFixed(4));
-  }
-  function report() {
-    const q = new URLSearchParams();
-    if (!body.classList.contains("deck")) q.set("view", "all");
-    else if (idx > 0) q.set("slide", String(idx + 1));
-    const qs = q.toString();
-    history.replaceState(null, "", location.pathname + (qs ? "?" + qs : ""));
-    if (window.reportShellLocation) window.reportShellLocation();
-  }
-  function render() {
-    slides.forEach((s, i) => s.classList.toggle("active", i === idx));
-    [...dots.children].forEach((d, i) => d.classList.toggle("on", i === idx));
-    document.getElementById("nav-count").textContent = (idx + 1) + " / " + slides.length;
-    document.getElementById("nav-title").textContent = titleOf(slides[idx]);
-    document.getElementById("nav-prev").disabled = idx === 0;
-    document.getElementById("nav-next").disabled = idx === slides.length - 1;
-    document.getElementById("nav-mode").textContent = body.classList.contains("deck") ? "All screens" : "Slideshow";
-    fit();
-    report();
-  }
-  function go(i) { idx = Math.max(0, Math.min(slides.length - 1, i)); render(); }
-  function setDeck(on) { body.classList.toggle("deck", on); render(); if (!on) slides[idx].scrollIntoView({ block: "start" }); }
-  function jumpTo(id) {
-    const i = slides.findIndex((s) => s.id === id);
-    if (i < 0) return;
-    if (body.classList.contains("deck")) go(i); else slides[i].scrollIntoView({ block: "start", behavior: "smooth" });
-  }
-  document.getElementById("nav-prev").onclick = () => go(idx - 1);
-  document.getElementById("nav-next").onclick = () => go(idx + 1);
-  document.getElementById("nav-mode").onclick = () => setDeck(!body.classList.contains("deck"));
-  document.addEventListener("click", (e) => {
-    const a = e.target.closest('a[href^="#"]');
-    if (!a) return;
-    e.preventDefault();
-    jumpTo(a.getAttribute("href").slice(1));
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.metaKey || e.ctrlKey || e.altKey) return;
-    const deck = body.classList.contains("deck");
-    if (deck && ["ArrowRight", "PageDown", " ", "Enter"].includes(e.key)) { e.preventDefault(); go(idx + 1); }
-    else if (deck && ["ArrowLeft", "PageUp", "Backspace"].includes(e.key)) { e.preventDefault(); go(idx - 1); }
-    else if (deck && e.key === "Home") go(0);
-    else if (deck && e.key === "End") go(slides.length - 1);
-    else if (e.key === "a" || e.key === "A") setDeck(!deck);
-    else if (e.key === "f" || e.key === "F") { document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen().catch(() => {}); }
-  });
-  addEventListener("resize", fit);
-  const start = parseInt(params.get("slide") || "1", 10);
-  idx = Number.isFinite(start) ? Math.max(0, Math.min(slides.length - 1, start - 1)) : 0;
-  if (location.hash) { const i = slides.findIndex((s) => s.id === location.hash.slice(1)); if (i >= 0) idx = i; }
-  setDeck(params.get("view") !== "all");
-})();
-</script>
 </body>
 </html>
