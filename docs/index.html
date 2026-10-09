@@ -186,8 +186,6 @@
   footer .brand { font-size: 17px; color: var(--ink); }
   footer .brand svg { width: 26px; height: 26px; }
 
-  .toast { position: fixed; left: 50%; bottom: 28px; transform: translate(-50%, 30px); background: var(--ink); color: var(--cream); padding: 13px 20px; border-radius: 999px; font-size: 15px; opacity: 0; transition: all 0.25s ease; pointer-events: none; }
-  .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
   @media (max-width: 900px) {
     .hero, .aud, .aud.flip, .creator { grid-template-columns: 1fr; }
@@ -232,8 +230,8 @@
 <div class="wrap">
   <nav class="nav">
     <a class="brand" href="#top" style="color:var(--cherry)"><svg><use href="#cherries"/></svg><span style="color:var(--ink)">Handpicked</span></a>
-    <div class="links"><a href="#how">How it works</a><a href="#you">For you</a><a href="#friends">For your friends</a><a href="#creators">For creators</a><a href="storyboard/">Mock screens</a></div>
-    <a class="btn primary small get" href="#get">Add to Firefox</a>
+    <div class="links"><a href="#how">How it works</a><a href="#you">For you</a><a href="#friends">For your friends</a><a href="#creators">For creators</a><a href="slides/">Slides</a></div>
+    <a class="btn primary small" id="nav-storyboard" href="storyboard/">See the screens</a>
   </nav>
 
   <header class="hero" id="top">
@@ -242,10 +240,10 @@
       <h1>Handpicked<span class="dot">.</span></h1>
       <p class="sub">Your next video, picked by <b>someone who knows you</b>, with a reason why. Not by an algorithm that only knows what you clicked.</p>
       <div class="cta-row">
-        <a class="btn primary get" href="#get">Add to Firefox</a>
-        <a class="btn ghost" href="#how">See how it works</a>
+        <a class="btn primary" id="hero-storyboard" href="storyboard/">See the storyboard</a>
+        <a class="btn ghost" id="hero-slides" href="slides/">Watch the slides</a>
       </div>
-      <div class="fine">Free. Works in Chrome too. Nothing you share is ever public.</div>
+      <div class="fine">Build-night preview: every screen is designed, the extension is on the way. Nothing you share is ever public.</div>
     </div>
     <div class="stage" aria-hidden="true">
       <div class="player">
@@ -312,7 +310,7 @@
       <div class="who-tag"><span class="av av-b">B</span>For you</div>
       <h2>A feed that actually gets you.</h2>
       <p class="lead">A like says "sure". A reaction at 3:42 says "this, right here, and here's why". Show people exactly what lights you up, and let them do the picking.</p>
-      <a class="btn primary get" href="#get">Start reacting</a>
+      <a class="btn primary" id="you-storyboard" href="storyboard/">See it screen by screen</a>
     </div>
     <div class="benefits">
       <div class="benefit"><div class="ic"><svg><use href="#i-target"/></svg></div><h3>Say exactly what you love</h3><p>Not a thumbs-up on a whole video. The moment, in your own face and voice.</p></div>
@@ -395,10 +393,10 @@
   <div class="final">
     <svg class="cherries" style="color:#fff"><use href="#cherries"/></svg>
     <h2>Your circle is the algorithm.</h2>
-    <p>React to one video tonight. Send it to one person. That's the whole thing.</p>
+    <p>React to one video. Send it to one person. That's the whole thing. Here's every screen of it.</p>
     <div class="cta-row">
-      <a class="btn primary get" href="#get">Add to Firefox</a>
-      <a class="btn ghost get-invite" href="#get">Send an invite link</a>
+      <a class="btn primary" id="final-storyboard" href="storyboard/">See the storyboard</a>
+      <a class="btn ghost" id="final-slides" href="slides/">Watch the slides</a>
     </div>
   </div>
   <footer>
@@ -409,16 +407,5 @@
   </footer>
 </div>
 
-<div class="toast" id="toast">The extension isn't published yet. This is the build-night preview.</div>
-<script>
-  const toast = document.getElementById("toast");
-  let timer = null;
-  document.querySelectorAll(".get, .get-invite").forEach((el) => el.addEventListener("click", (e) => {
-    e.preventDefault();
-    toast.classList.add("show");
-    clearTimeout(timer);
-    timer = setTimeout(() => toast.classList.remove("show"), 2600);
-  }));
-</script>
 </body>
 </html>
