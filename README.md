@@ -25,7 +25,11 @@ The name comes from "manifestation": embody your interests in front of your circ
 
 ## Status
 
-Idea stage. Nothing built yet.
+Spike for the build-night demo. The server contract is written; the server
+itself isn't built yet.
+
+- [`docs/api.md`](docs/api.md): the product flows as calls, and the endpoint reference.
+- [`docs/data-format.md`](docs/data-format.md): the stored objects, and the metadata kept for debugging.
 
 ## License
 
