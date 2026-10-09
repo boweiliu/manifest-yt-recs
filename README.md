@@ -23,6 +23,14 @@ The name comes from "manifestation": embody your interests in front of your circ
 - **No accounts required.** People join through invite links sent over any channel. Google sign-in is optional, so friends who have left Google aren't excluded.
 - **Separable from YouTube.** Reactions are tied to the video itself, not the YouTube page, so they can play on any copy of the same video.
 
+## In this repo
+
+- [`landing/`](landing/): the marketing landing page ("Handpicked.").
+- [`docs/mocks/`](docs/mocks/): mock screens for the demo loop, as slides and
+  as one storyboard page, plus the written-out interactions.
+- [`docs/api.md`](docs/api.md), [`docs/data-format.md`](docs/data-format.md):
+  the server contract.
+
 ## Status
 
 Spike for the build-night demo. The server contract is written; the server
